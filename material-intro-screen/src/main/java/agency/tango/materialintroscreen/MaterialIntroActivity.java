@@ -311,6 +311,10 @@ public abstract class MaterialIntroActivity extends AppCompatActivity {
     public void onFinish() {
     }
 
+    public void goToNextPage() {
+        viewPager.moveToNextPage();
+    }
+
     private void initOnPageChangeListeners() {
         messageButtonBehaviourOnPageSelected = new MessageButtonBehaviourOnPageSelected(messageButton, adapter, messageButtonBehaviours);
 
