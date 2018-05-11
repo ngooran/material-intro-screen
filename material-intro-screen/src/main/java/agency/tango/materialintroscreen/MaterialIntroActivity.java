@@ -406,13 +406,15 @@ public abstract class MaterialIntroActivity extends AppCompatActivity {
     }
 
     private void showError(String error) {
-        Snackbar.make(coordinatorLayout, error, Snackbar.LENGTH_SHORT).setCallback(new Snackbar.Callback() {
-            @Override
-            public void onDismissed(Snackbar snackbar, int event) {
-                navigationView.setTranslationY(0f);
-                super.onDismissed(snackbar, event);
-            }
-        }).show();
+        if (error != null) {
+            Snackbar.make(coordinatorLayout, error, Snackbar.LENGTH_SHORT).setCallback(new Snackbar.Callback() {
+                @Override
+                public void onDismissed(Snackbar snackbar, int event) {
+                    navigationView.setTranslationY(0f);
+                    super.onDismissed(snackbar, event);
+                }
+            }).show();
+        }
     }
 
     private Integer getBackgroundColor(int position, float positionOffset) {
